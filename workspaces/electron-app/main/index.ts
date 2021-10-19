@@ -23,5 +23,20 @@ global.appConfig =
 		? defaultConf
 		: _.merge(defaultConf, currentConf);
 
+import settings from 'electron-settings';
+
+settings
+	.set('color', {
+		name: 'cerulean',
+		code: {
+			rgb: [0, 179, 230],
+			hex: '#003BE6',
+		},
+	})
+	.then(() => {
+		settings.get('color.name').then((v) => console.log(v));
+		settings.get('color.code.rgb[1]').then((v) => console.log(v));
+	});
+
 // Launch app
 App.launch();
