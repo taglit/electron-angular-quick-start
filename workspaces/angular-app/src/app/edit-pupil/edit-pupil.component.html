@@ -1,0 +1,14 @@
+<div [formGroup]="pupilForm" dir="rtl">
+	<div
+		*ngFor="let controlKey of getFormGroupKeys(pupilForm.controls); index as i"
+		[formGroupName]="controlKey"
+	>
+		<label>
+			<input formControlName="key" />
+			<input formControlName="value" />
+		</label>
+	</div>
+
+	<button type="button" (click)="addRow()">הוסף שורה</button>
+	<button type="button" (click)="saveChanges()">שמור</button>
+</div>

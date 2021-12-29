@@ -1,0 +1,20 @@
+<div class="main-wrapper">
+	<div>
+		<img src="/assets/logo.jpg" alt="ידיעת התורה - מסכת תענית" class="logo" />
+	</div>
+	<div *ngFor="let field of currentPupil">
+		<div *ngIf="field[0] !== '_id' && field[0] !== '_rev'">
+			<div *ngIf="field[0] === 'name'" class="name">
+				<b>שם התלמיד: </b>
+
+				<p style="display: inline">{{ field[1] }}</p>
+			</div>
+			<div *ngIf="field[0] !== 'name'">
+				<b>{{ field[0] }}</b>
+				<p style="display: inline">
+					{{ field[1] }}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

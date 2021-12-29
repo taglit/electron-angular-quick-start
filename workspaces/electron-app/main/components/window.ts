@@ -46,6 +46,8 @@ export class Window {
 		let iconObj = undefined;
 		if (global.appConfig.isIconAvailable) {
 			const iconPath = path.join(__dirname, 'icons/icon.png');
+			console.log(__dirname);
+
 			Logger.debug('Icon Path', iconPath);
 			iconObj = nativeImage.createFromPath(iconPath);
 			// Change dock icon on MacOS

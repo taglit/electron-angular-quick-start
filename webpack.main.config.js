@@ -19,6 +19,7 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{ from: 'workspaces/electron-app/main/assets' },
+				{ from: 'workspaces/angular-app/src/assets' },
 				{
 					from: 'workspaces/angular-app/.dist/angular-app',
 					to: '../renderer/angular_window',
